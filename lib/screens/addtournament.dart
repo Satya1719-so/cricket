@@ -8,6 +8,7 @@ class Addtournament extends StatefulWidget {
 }
 
 class _AddtournamentState extends State<Addtournament> {
+   int myIndex=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,11 +52,39 @@ class _AddtournamentState extends State<Addtournament> {
           SizedBox(height: 10,),
           Container(
            child: TextField()
-          )
-          
-          
+          ),
+        Row(
+          children:[
+            Button(ButtonName:'save'),
+            Button(ButtonName:'Reset'),
+          ],
+          ),
+      
+       BottomNavigationBar(
+            onTap: (index){
+              setState(() {
+                myIndex=index;
+              });
+           
+            },
+            currentIndex: myIndex,
+            items:
+         [
+          BottomNavigationBarItem(icon: Icon(Icons.home_max_sharp,),
+        label: 'Home'),
+       
+        BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline,),
+        label: 'Add Tournament',
+        
+        ),
+         BottomNavigationBarItem(icon: Icon(Icons.explore_outlined,),
+        label: 'show Tournament',
+        
+        ),
+        BottomNavigationBarItem(icon: Icon(Icons.history_outlined),
+        label: 'Game History')
         ],
-      ),
-    );
+         ),
+   ]) );
   }
 }
