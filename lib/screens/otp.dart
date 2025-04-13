@@ -102,7 +102,7 @@ class _OtpPageState extends State<OtpPage> {
 
                     // Sign the user in (or link) with the credential
                     await auth.signInWithCredential(credential);
-                   // Navigator.pushNamed(context, home)=>MyHome();
+                   // Navigator.pushNamed(context, 'home');
                    
                   },
                   child: Text(

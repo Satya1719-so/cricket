@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "264901290549",
-    "project_id": "my-practice-148f1",
-    "storage_bucket": "my-practice-148f1.appspot.com"
+    "project_number": "867803452831",
+    "project_id": "cricketwala-dc22b",
+    "storage_bucket": "cricketwala-dc22b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:264901290549:android:f80c5b0b6c836e3ad89f7c",
+        "mobilesdk_app_id": "1:867803452831:android:2d0c120f95841df24799aa",
         "android_client_info": {
-          "package_name": "com.example.firebase_auth_otp"
+          "package_name": "com.example.cricketwala"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDpJRwo1RSPg8W5K9TIkl5bSa2J4YciLfg"
+          "current_key": "AIzaSyAzNR9VizBWiI8BXUkcuoFp0KsvYqDcDrI"
         }
       ],
       "services": {

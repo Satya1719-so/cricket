@@ -1,5 +1,6 @@
 import 'package:firebase_auth_otp/screens/button.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth_otp/screens/profile.dart';
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
 
@@ -13,15 +14,15 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(leading: GestureDetector(child: CircleAvatar(
-        radius: 6,
-        backgroundColor:Colors.black ,
+        radius: 60,
+      //  backgroundImage:MemoryImage(_Image!) ,
         
       ),onTap: () {
-        print('profile');
+        Navigator.pushNamed(context,'/profile');
       },
       ),
       
-      leadingWidth: 6,
+      leadingWidth: 60,
        ),
       body: Column(
        children: [
@@ -50,28 +51,35 @@ class _MyHomeState extends State<MyHome> {
            ),
          ),
          SizedBox(height: 20,),
-         Container(
-          child:Padding(
-            padding: const EdgeInsets.all(8.0),
+         
+          Expanded(
+            
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Button(ButtonName: 'button1'),
-                    Button(ButtonName: 'button2'),
-                    Button(ButtonName: 'button3'),
-                    Button(ButtonName: 'button4'),
-                  ]
+                Expanded(
+                  child: Row(
+                    children: [
+                      Button(ButtonName: 'Add teams',ButtonColor:Colors.yellow ,
+                      ),
+                      SizedBox(width: 5,),
+                      Button(ButtonName: 'Add match/tournament',ButtonColor: Colors.blue,),
+                      SizedBox(width: 5,),
+                      Button(ButtonName: 'Add score',ButtonColor: Colors.grey,),
+                     // Button(ButtonName: 'button4'),
+                    ]
+                  ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
                 Row(
                   children: [
-                    Button(ButtonName: 'button5'),
-                    Button(ButtonName: 'button6'),
-                    Button(ButtonName: 'button7'),
-                    Button(ButtonName: 'button8'),
+                    Button(ButtonName: 'shows score',ButtonColor: Colors.red,),
+                    SizedBox(width: 10,),
+                    Button(ButtonName: 'shows score',ButtonColor: Colors.green,),
+                    SizedBox(width: 10,),
+                    Button(ButtonName: 'button7',ButtonColor:Colors.black,),
+                  //  Button(ButtonName: 'button8'),
                   ],
                 ),
                 SizedBox(height: 10,),
@@ -84,9 +92,8 @@ class _MyHomeState extends State<MyHome> {
               ],
             ),
           ),
-          
-         ),
-          BottomNavigationBar(
+       ]),
+         bottomNavigationBar: BottomNavigationBar(
             onTap: (index){
               setState(() {
                 myIndex=index;
@@ -96,23 +103,23 @@ class _MyHomeState extends State<MyHome> {
             currentIndex: myIndex,
             items:
          [
-          BottomNavigationBarItem(icon: Icon(Icons.home_max_sharp,),
+          BottomNavigationBarItem(icon: Icon(Icons.home_max_sharp,color: Colors.black,),
         label: 'Home'),
        
-        BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline,),
+        BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline,color:Colors.black),
         label: 'Add Tournament',
         
         ),
-         BottomNavigationBarItem(icon: Icon(Icons.explore_outlined,),
+         BottomNavigationBarItem(icon: Icon(Icons.explore_outlined,color: Colors.black,),
         label: 'show Tournament',
         
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.history_outlined),
+        BottomNavigationBarItem(icon: Icon(Icons.history_outlined,color: Colors.black,),
         label: 'Game History')
         ],
          )
-       ],
-      ),
+       
+      
     );
   }
 }
